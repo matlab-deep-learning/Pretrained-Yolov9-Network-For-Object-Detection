@@ -1,9 +1,17 @@
 % Read test image.
 I = imread('inputTeam.jpg');
 
-% Replace 'yolov9m' with other supported versions in yolov9Predict to generate code for
+% Replace 'Yolov9m' with other supported versions here and in yolov9Predict to generate code for
 % other YOLO v9 variants.
-modelName = 'yolov9m';
+modelName = 'Yolov9m';
+% Check if the model file exists
+files = dir('**/*');
+filename = strcat(modelName,'.mat');
+fileExists = any(strcmp({files.name}, filename));
+% Download model if it does not exists
+if ~fileExists
+    helper.downloadPretrainedYOLOv9(modelName);
+end
 
 % Display yolov9Predict function.
 type('yolov9Predict.m');
