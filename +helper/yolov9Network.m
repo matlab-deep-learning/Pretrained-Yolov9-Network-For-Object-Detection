@@ -12,28 +12,28 @@ if isempty(modelname)
 end
 
 if strcmpi(modelname,'Yolov9c')
-% Load Yolov9c Network
-detector = load("Yolov9c.mat");
+% Load Yolov9c Detector
+detector = helper.downloadPretrainedYOLOv9('Yolov9c');
 end
 
 if strcmpi(modelname,'Yolov9e')
-% Load Yolov9e Network
-detector = load("Yolov9e.mat");
+% Load Yolov9e Detector
+detector = helper.downloadPretrainedYOLOv9('Yolov9e');
 end
 
 if strcmpi(modelname,'Yolov9t')
-% Load Yolov9t Network
-detector = load("Yolov9t.mat");
+% Load Yolov9t Detector
+detector = helper.downloadPretrainedYOLOv9('Yolov9t');
 end
 
 if strcmpi(modelname,'Yolov9s')
-% Load Yolov9s Network
-detector = load("Yolov9s.mat");
+% Load Yolov9s Detector
+detector = helper.downloadPretrainedYOLOv9('Yolov9s');
 end
 
 if strcmpi(modelname,'Yolov9m')
-% Load Yolov9m Network
-detector = load("Yolov9m.mat");
+% Load Yolov9m Detector
+detector = helper.downloadPretrainedYOLOv9('Yolov9m');
 end
 
 detector = detector.net;
