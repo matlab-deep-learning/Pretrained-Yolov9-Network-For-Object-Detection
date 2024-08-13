@@ -21,6 +21,10 @@ if ~exist(netMatFileFullPath,'file')
     end
     websave(netMatFileFullPath, url);
     fprintf('Done.\n\n');
+    folderPath = fullfile(pwd, folderName);
+    if ~contains(path, folderPath)
+        addpath(folderPath);
+    end
 else
     fprintf(['Pretrained ', modelName, ' network already exists.\n\n']);
 end
