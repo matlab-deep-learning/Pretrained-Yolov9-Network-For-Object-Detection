@@ -47,7 +47,6 @@ out3r = reshape(out3p, [size(out3p, 1)*size(out3p, 2), size(out3p, 3)]);
 out = cat(1, out1r, out2r, out3r);
 
 % Post-processing ONNX Layers implementation in MATLAB
-% This is specific to Yolov9c model
 nclasses = 80;
 dim1 = size(out, 1);
 dim2 = size(out, 2);
@@ -58,7 +57,6 @@ splitout1 = out(:, 1:endIndex);
 splitout2 = out(:, endIndex+1:dim2);
 splitout2 = sigmoid(splitout2);
 
-% Hard-coded values for 144 channels
 splitout1 = reshape(splitout1, [dim1, 16, 4]);
 splitout1 = permute(splitout1, [1, 3, 2]);
 splitout1 = permute(splitout1, [2, 1, 3]);
@@ -102,7 +100,6 @@ combout = cat(2, mul1, splitout2);
 
 % Get the final feature map
 featureMap = permute(combout, [2, 1]);
-%finalout = reshape(final, [1, size(final, 1), size(final, 2)]);
 
 % Post-process obtained feature map
 output = helper.postprocess(featureMap,imgp, image);
