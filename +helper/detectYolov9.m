@@ -3,7 +3,7 @@ function [bboxes, scores, labelIds] = detectYolov9(detector,image,executionEnvir
 % and returns corresponding bounding boxes, confidence scores and classIds
 % 
 % Inputs:
-% detector                  - Pre-trained Yolov9 detector object.
+% detector                  - Pre-trained Yolov9 detector network.
 % image                     - Input image in RGB format.
 % executionEnvironment      - Specifies the execution environment ('auto', 'gpu', 'cpu').
 % 
