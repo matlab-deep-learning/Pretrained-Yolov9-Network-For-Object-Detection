@@ -112,7 +112,7 @@ Simulink is a block diagram environment used to design systems with multidomain 
 
 ```matlab
 % Read test image.
-im = imread(fullfile('data/Input','inputTeam.jpg'));
+I = imread(fullfile('data/Input','inputTeam.jpg'));
 
 % Open Simulink model.
 open('yolov9SimulinkSupport.slx')
