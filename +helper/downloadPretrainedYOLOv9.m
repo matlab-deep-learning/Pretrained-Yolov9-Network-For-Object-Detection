@@ -15,6 +15,10 @@ if ~exist(netMatFileFullPath,'file')
     fprintf(['Downloading pretrained ', modelName ,' network.\n']);
     fprintf('This can take several minutes to download...\n');
     url = ['https://github.com/matlab-deep-learning/Pretrained-Yolov9-Network-For-Object-Detection/releases/download/v1.0.0/', modelName, '.mat'];
+    folderName = 'models';
+    if ~isfolder(folderName)
+        mkdir(folderName);
+    end
     websave(netMatFileFullPath, url);
     fprintf('Done.\n\n');
 else
