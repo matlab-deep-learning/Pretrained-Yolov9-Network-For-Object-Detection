@@ -78,7 +78,7 @@ det = yolov9ObjectDetector('Yolov9m');
 [bboxes, scores, labelIds] = detect(det, I);
 
 % Visualize detection results.
-helper.plotDetections(I,bboxes,scores,labelIds);
+helper.plotObjectDetections(I,bboxes,scores,labelIds);
 ```
 ![Results](/data/Output/inputTeamResults.jpeg)
 
