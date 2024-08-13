@@ -137,5 +137,3 @@ Following are the key features of the YOLO v9 object detector compared to its pr
 
 
 Copyright 2024 The MathWorks, Inc.
-
-
